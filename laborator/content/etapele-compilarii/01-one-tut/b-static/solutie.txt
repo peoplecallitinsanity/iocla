@@ -1,0 +1,1 @@
+În exercitiul 01-one-tut, b-static, am observat în urma compilarii fisierului că acesta este compilat static - cu ajutorul comenzii file hello.
