@@ -1,0 +1,1 @@
+La exercitiul 02-multiple-tut am observat comenzile folosite pentru linkarea mai multor fisiere in 3 cazuri separate.
