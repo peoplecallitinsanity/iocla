@@ -1,0 +1,6 @@
+Am editat fisierul hello.c - linia 13
+my_main -> main 
+pentru a putea compila programul
+folosind gcc -m32 hello.o -o a.out am creat fisierul executabil si am obtinut outputul:
+Hi!
+Bye!
