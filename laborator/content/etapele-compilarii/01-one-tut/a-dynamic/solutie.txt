@@ -1,0 +1,1 @@
+În exercitiul 01-one-tut, a-dynamic, am observat în urma compilarii fisierului că acesta este compilat dinamic - cu ajutorul comenzii file hello.
