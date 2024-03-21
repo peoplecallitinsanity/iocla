@@ -2,16 +2,28 @@
 #include <stdlib.h>
 #include <string.h>
 
-void mirror(char *s)
-{
-	/* TODO */
-	(void) s;
+
+void mirror(char *s) {
+    char *sf = s, x;
+    while (*sf)
+        sf++;
+    sf--;
+
+    while (s < sf) {
+        x = *s;
+        *s = *sf;
+        *sf = x;
+        s++;
+        sf--;
+    }
 }
 
-int main(void)
-{
-	/* TODO: Test function */
+int main(void) {
 
-	return 0;
+    char test[] = "AnaAreMere";
+    mirror(test);
+    printf("Invers: %s\n", test);
+    return 0;
 }
+
 

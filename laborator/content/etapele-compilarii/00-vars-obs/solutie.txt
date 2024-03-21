@@ -1,0 +1,4 @@
+în exercitiul 00-var-obs am observat că în urma compilării fișierelor cu ajutorul Makefile am optinut mai multe fisiere *.o pe care cu ajutorul comenzii
+gcc -m32 main.o hidden.o pain.o -o a.out am obtinut executabilul a.out, pe care rulând-ul vedem outputul:
+get(): 10
+age: 33
