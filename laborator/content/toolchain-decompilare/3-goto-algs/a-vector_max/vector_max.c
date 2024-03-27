@@ -11,7 +11,20 @@ int main(void)
 	/* TODO: Implement finding the maximum value in the vector */
 	max = v[0];
 	i = 1;
+	int n = sizeof(v) / sizeof(v[0]); 
 
+here:
+    if (i < n) goto compara; 
+    goto sf;
+
+compara:
+    if (v[i] > max) max = v[i];
+    i++; 
+    goto here; 
+
+sf:
+    printf("Max : %d\n", max);
 	(void) i;
 	(void) max;
+	return 0;
 }
