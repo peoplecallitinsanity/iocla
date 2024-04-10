@@ -3,8 +3,8 @@
 ; https://en.wikibooks.org/wiki/X86_Assembly/Arithmetic
 
 section .data
-    num1 db 43
-    num2 db 39
+    num1 db 9
+    num2 db 9
     num1_w dw 1349
     num2_w dw 9949
     num1_d dd 134932
@@ -24,9 +24,30 @@ main:
 
     ; Print result in hexa
     PRINTF32 `Rezultatul este: 0x%hx\n\x0`, eax
+    ; PRINTF32 `Rezultatul este: %d\n\0`, ebx
+
+    ; TODO: Implement multiplication for dw and dd data types.
+    ; Multiplicare dw
+    xor ebx, ebx
+    xor eax, eax
+    mov ax, word [num1_w]
+    mov bx, word [num2_w]
+    mul bx
+
+    PRINTF32 `Rezultatul este: 0x%x%x\n\x0`, edx, eax
+
+    ; Multiplicare dd
+    xor ebx, ebx
+    xor eax, eax
+    xor edx, edx
+    mov eax, dword [num1_d]
+    mov ebx, dword [num2_d]
+    mul ebx
+
+    PRINTF32 `Rezultatul este: 0x%x%x\n\x0`, edx, eax
 
 
-   ; TODO: Implement multiplication for dw and dd data types.
+
 
     leave
     ret
