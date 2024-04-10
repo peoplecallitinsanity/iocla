@@ -27,6 +27,23 @@ add_byte_array_element:
 
 
     ; TODO: Compute sum for elements in word_array and dword_array.
+    xor eax, eax
+    xor edx, edx
+    mov ecx, ARRAY_SIZE
+add_word_array_element:
+    mov dx, word [word_array + 2 *ecx -2 ]
+    add eax, edx
+    loop add_word_array_element
+    PRINTF32 `Array sum is %u\n\x0`, eax
+
+    xor eax, eax
+    xor edx, edx
+    mov ecx, ARRAY_SIZE
+add_dword_array_element:
+    mov edx, dword [dword_array + 4 *ecx - 4 ]
+    add eax, edx
+    loop add_dword_array_element
+    PRINTF32 `Array sum is %u\n\x0`, eax
 
     leave
     ret
