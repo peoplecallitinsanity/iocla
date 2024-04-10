@@ -34,11 +34,12 @@ main:
     mov bx, word [num2_w]
     mul bx
 
-    PRINTF32 `Rezultatul este: 0x%hx%hx\n\x0`, edx, eax
+    PRINTF32 `Rezultatul este: 0x%x%x\n\x0`, edx, eax
 
     ; Multiplicare dd
     xor ebx, ebx
     xor eax, eax
+    xor edx, edx
     mov eax, dword [num1_d]
     mov ebx, dword [num2_d]
     mul ebx
