@@ -7,6 +7,7 @@ section .data
     word_array dw 1893, 9773, 892, 891, 3921, 8929, 7299, 720, 2590, 28891
     dword_array dd 1392849, 12544, 879923, 8799279, 7202277, 971872, 28789292, 17897892, 12988, 8799201
     big_numbers_array dd 20000001, 3000000, 3000000, 23456789, 56789123, 123456789, 987654321, 56473829, 87564836, 777777777
+    dword_array2 dd 1392, 12544, 7992, 6992, 7202, 27187, 28789, 17897, 12988, 17992
 section .text
 extern printf
 global main
@@ -44,6 +45,26 @@ add_dword_array_element:
     add eax, edx
     loop add_dword_array_element
     PRINTF32 `Array sum is %u\n\x0`, eax
+
+    push ebp
+    mov ebp, esp
+    mov ecx, ARRAY_SIZE     
+    xor eax, eax           
+    xor edx, edx            
+
+add_dword_array_element2:
+    push eax
+    mov eax, dword [dword_array2 + 4 *ecx - 4 ]
+    mov edx, dword [dword_array2 + 4 *ecx - 4 ]
+    
+    mul edx
+    mov edx, eax
+    pop eax
+    add eax, edx
+    loop add_dword_array_element2
+    PRINTF32 `Array sum is %u\n\x0`, eax
+
+    PRINTF32 `stop \n\x0`
 
     leave
     ret
