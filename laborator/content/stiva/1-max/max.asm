@@ -8,9 +8,15 @@ main:
     ; numbers are placed in these two registers
     mov eax, 1
     mov ebx, 4 
+    cmp eax, ebx
+    ja out
+    push eax
+    push ebx
+    pop eax
+    pop ebx
 
     ; TODO: get maximum value. You are only allowed to use one conditional jump and push/pop instructions.
-
+out:
     PRINTF32 `Max value is: %d\n\x0`, eax ; print maximum value
 
     ret
