@@ -13,7 +13,16 @@ toupper:
     mov ebp, esp
 
     ; TODO
-
+    mov eax, [ebp + 8]
+check:
+    mov bl, [eax]
+    test bl, bl
+    je here
+    sub bl, 0x20
+    mov [eax], bl
+    inc eax
+    jmp check
+here:
     leave
     ret
 
