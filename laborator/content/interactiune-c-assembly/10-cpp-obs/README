@@ -1,0 +1,5 @@
+Am observat importanta includerii sintaxei
+extern "C" {
+    ...
+}
+pentru a putea apela functiile corect.
